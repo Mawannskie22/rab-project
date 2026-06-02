@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Reveal } from "./anim-wrapper";
 
 export default function Hero() {
   return (
@@ -8,7 +9,7 @@ export default function Hero() {
 
       <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
         {/* LEFT CONTENT */}
-        <div>
+        <Reveal x={-30}>
           <span className="rounded-full border border-[#00F5D4]/20 px-4 py-2 text-sm text-[#00F5D4]">
             Project Cost Control Partner
           </span>
@@ -46,21 +47,23 @@ export default function Hero() {
               Lihat Layanan
             </a>
           </div>
-        </div>
+        </Reveal>
 
         {/* RIGHT IMAGE */}
-        <div className="relative">
-          <div className="absolute inset-0 rounded-3xl bg-[#00F5D4]/10 blur-3xl" />
- 
-          <Image
-            src="/images/project-control.png"
-            alt="RAB Project Control"
-            width={800}
-            height={600}
-            priority
-            className="relative z-10 w-full rounded-3xl"
-          />
-        </div>
+        <Reveal x={30} delay={0.2}>
+          <div className="relative">
+            <div className="absolute inset-0 rounded-3xl bg-[#00F5D4]/10 blur-3xl" />
+
+            <Image
+              src="/images/project-control.png"
+              alt="RAB Project Control"
+              width={800}
+              height={600}
+              priority
+              className="relative z-10 w-full rounded-3xl"
+            />
+          </div>
+        </Reveal>
       </div>
     </section>
   );

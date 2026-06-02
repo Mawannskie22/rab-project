@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Reveal } from "./anim-wrapper";
 export default function ContactForm() {
   const [nama, setNama] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
@@ -41,6 +42,7 @@ ${pesan}`;
           </p>
         </div>
 
+        <Reveal>
         <form
           onSubmit={handleSubmit}
           className="mt-12 space-y-6 rounded-3xl border border-white/10 bg-[#1E293B]/50 p-8"
@@ -86,6 +88,7 @@ ${pesan}`;
             Kirim Konsultasi
           </button>
         </form>
+        </Reveal>
       </div>
     </section>
   );

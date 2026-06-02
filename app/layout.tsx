@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
-import FloatingWhatsapp from "@/components/FloatingWhatsapp";
+import ClientFloatingWhatsapp from "@/components/ClientFloatingWhatsapp";
 
 export const metadata: Metadata = {
-title: "RAB Project Control",
-description:
-"Hitung RAB, Audit BQ, dan Kontrol Biaya Proyek",
+  title: "RAB Project Control",
+  description: "Hitung RAB, Audit BQ, dan Kontrol Biaya Proyek",
 };
 
 export default function RootLayout({
-children,
+  children,
 }: Readonly<{
-children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-return ( <html lang="id"> <body>
-{children} <FloatingWhatsapp /> </body> </html>
-);
+  return (
+    <html lang="id">
+      {" "}
+      <body>
+        {children} <ClientFloatingWhatsapp />{" "}
+      </body>{" "}
+    </html>
+  );
 }
