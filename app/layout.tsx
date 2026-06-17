@@ -14,10 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
-      {" "}
       <body>
-        {children} <ClientFloatingWhatsapp />{" "}
-      </body>{" "}
+        {children}<ClientFloatingWhatsapp />
+      </body>
     </html>
   );
 }
