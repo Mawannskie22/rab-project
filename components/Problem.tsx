@@ -35,7 +35,7 @@ export default function Problems() {
         <Stagger className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {problems.map((problem) => (
             <StaggerItem key={problem}>
-              <div className="rounded-2xl border border-red-500/10 bg-[#1E293B]/50 p-6 transition hover:border-red-500/40">
+              <div className="rounded-2xl border border-red-500/10 bg-[#1E293B]/50 p-6 transition hover:border-red-500/40 h-full">
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-red-500/10 text-red-400">
                   ✕
                 </div>

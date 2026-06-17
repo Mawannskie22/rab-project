@@ -14,7 +14,7 @@ export default function Stats() {
         <Stagger className="grid gap-6 md:grid-cols-4">
           {stats.map((item) => (
             <StaggerItem key={item.label}>
-              <div className="rounded-2xl border border-white/10 bg-[#1E293B]/50 p-8 text-center">
+              <div className="rounded-2xl border border-white/10 bg-[#1E293B]/50 p-8 text-center h-full">
                 <h3 className="text-4xl font-bold text-[#00F5D4]">
                   {item.value}
                 </h3>

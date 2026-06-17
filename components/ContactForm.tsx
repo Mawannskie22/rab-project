@@ -11,8 +11,6 @@ export default function ContactForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const nomorTujuan = "628123456789"; // ganti nomor client
-
     const text = `Halo RAB Project Control,
 
 Nama: ${nama}

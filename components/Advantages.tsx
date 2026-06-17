@@ -58,12 +58,12 @@ export default function Advantages() {
         <Stagger className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {advantages.map((item) => (
             <StaggerItem key={item.title}>
-              <div className="rounded-2xl border border-white/10 bg-[#1E293B]/50 p-6 transition hover:border-[#00F5D4]/50">
+              <div className="rounded-2xl border border-white/10 bg-[#1E293B]/50 p-6 transition hover:border-[#00F5D4]/50 flex flex-col h-full">
                 <h3 className="mb-3 text-xl font-semibold text-white">
                   {item.title}
                 </h3>
 
-                <p className="text-slate-400">
+                <p className="text-slate-400 flex-1">
                   {item.description}
                 </p>
               </div>

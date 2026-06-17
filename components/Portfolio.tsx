@@ -50,7 +50,7 @@ export default function Portfolio() {
         <Stagger className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {projects.map((project) => (
             <StaggerItem key={project.title}>
-              <div className="rounded-2xl border border-white/10 bg-[#1E293B]/50 p-6 transition-all duration-300 hover:-translate-y-2 hover:border-[#00F5D4]">
+              <div className="rounded-2xl border border-white/10 bg-[#1E293B]/50 p-6 transition-all duration-300 hover:-translate-y-2 hover:border-[#00F5D4] flex flex-col h-full">
                 <div className="mb-6 h-40 rounded-xl bg-gradient-to-br from-[#00F5D4]/20 to-transparent" />
 
                 <p className="text-sm text-[#00F5D4]">
@@ -61,7 +61,7 @@ export default function Portfolio() {
                   {project.title}
                 </h3>
 
-                <p className="mt-3 text-sm text-slate-400">
+                <p className="mt-3 text-sm text-slate-400 flex-1">
                   {project.description}
                 </p>
               </div>

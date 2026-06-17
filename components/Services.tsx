@@ -30,7 +30,7 @@ export default function Services() {
         <Stagger className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {services.map((service) => (
             <StaggerItem key={service}>
-              <div className="rounded-2xl border border-white/10 bg-[#1E293B] p-6 transition hover:border-[#00F5D4]">
+              <div className="rounded-2xl border border-white/10 bg-[#1E293B] p-6 transition hover:border-[#00F5D4] h-full">
                 <h3 className="text-lg font-semibold text-white">
                   {service}
                 </h3>

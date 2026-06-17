@@ -4,11 +4,9 @@ import { Reveal } from "./anim-wrapper";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-[#090D16] pt-40 pb-24">
-      {/* Glow Background */}
       <div className="absolute left-1/2 top-40 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-[#00F5D4]/10 blur-[180px]" />
 
       <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
-        {/* LEFT CONTENT */}
         <Reveal x={-30}>
           <span className="rounded-full border border-[#00F5D4]/20 px-4 py-2 text-sm text-[#00F5D4]">
             Project Cost Control Partner
@@ -17,7 +15,7 @@ export default function Hero() {
           <h1 className="mt-8 text-5xl font-bold leading-tight text-white md:text-6xl">
             Hitung RAB,
             <br />
-            Audit BQ &
+            Audit BQ &amp;
             <br />
             Kontrol Biaya{" "}
             <span className="text-[#00F5D4]">
@@ -49,7 +47,6 @@ export default function Hero() {
           </div>
         </Reveal>
 
-        {/* RIGHT IMAGE */}
         <Reveal x={30} delay={0.2}>
           <div className="relative">
             <div className="absolute inset-0 rounded-3xl bg-[#00F5D4]/10 blur-3xl" />
@@ -60,6 +57,7 @@ export default function Hero() {
               width={800}
               height={600}
               priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="relative z-10 w-full rounded-3xl"
             />
           </div>

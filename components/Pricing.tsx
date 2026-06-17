@@ -63,7 +63,7 @@ export default function Pricing() {
           {packages.map((pkg) => (
             <StaggerItem key={pkg.name}>
               <div
-                className={`rounded-3xl border p-8 ${
+                className={`rounded-3xl border p-8 flex flex-col h-full ${
                   pkg.featured
                     ? "border-[#00F5D4] bg-[#1E293B]"
                     : "border-white/10 bg-[#1E293B]/50"
@@ -77,7 +77,7 @@ export default function Pricing() {
                   {pkg.price}
                 </p>
 
-                <ul className="mt-8 space-y-4">
+                <ul className="mt-8 space-y-4 flex-1">
                   {pkg.features.map((feature) => (
                     <li
                       key={feature}
