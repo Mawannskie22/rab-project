@@ -45,7 +45,7 @@ export default function Advantages() {
             </span>
 
             <h2 className="mt-6 text-4xl font-bold text-white">
-              Kenapa Memilih RAB Project Control?
+              Kenapa Memilih Cost Guard?
             </h2>
 
             <p className="mx-auto mt-4 max-w-2xl text-slate-400">

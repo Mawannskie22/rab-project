@@ -11,7 +11,7 @@ export default function ContactForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const text = `Halo RAB Project Control,
+    const text = `Halo Cost Guard,
 
 Nama: ${nama}
 WhatsApp: ${whatsapp}
@@ -20,7 +20,7 @@ Jenis Proyek: ${jenisProyek}
 Kebutuhan:
 ${pesan}`;
 
-    const url = `https://wa.me/6287882828329?text=${encodeURIComponent(
+    const url = `https://wa.me/6281999476069?text=${encodeURIComponent(
       text
     )}`;
 

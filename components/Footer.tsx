@@ -9,7 +9,7 @@ export default function Footer() {
 
             <div>
               <h3 className="text-xl font-bold text-white">
-                RAB Project Control
+                Cost Guard
               </h3>
 
               <p className="mt-4 text-slate-400">
@@ -58,7 +58,7 @@ export default function Footer() {
           </div>
 
           <div className="mt-12 border-t border-white/10 pt-8 text-center text-slate-500">
-            © 2026 RAB Project Control. All rights reserved.
+            © 2026 Cost Guard. All rights reserved.
           </div>
         </Reveal>
       </div>

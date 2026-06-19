@@ -20,14 +20,14 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-3">
           <Image
             src="/logo/logoRAB.jpeg"
-            alt="RAB Project Control"
+            alt="Cost Guard"
             width={60}
             height={60}
             priority
             className="rounded-xl"
           />
           <div>
-            <h1 className="font-bold text-white">RAB Project Control</h1>
+            <h1 className="font-bold text-white">Cost Guard</h1>
             <p className="text-xs text-slate-400">Cost Control Partner</p>
           </div>
         </Link>
@@ -51,7 +51,7 @@ export default function Navbar() {
         </nav>
 
         <a
-          href="https://wa.me/6287882828329"
+          href="https://wa.me/6281999476069"
           className="hidden rounded-xl bg-[#00F5D4] px-5 py-3 font-semibold text-black md:block"
         >
           Konsultasi
@@ -84,7 +84,7 @@ export default function Navbar() {
               Kontak
             </Link>
             <a
-              href="https://wa.me/6287882828329"
+              href="https://wa.me/6281999476069"
               className="mt-4 rounded-xl bg-[#00F5D4] px-5 py-3 text-center font-semibold text-black"
             >
               Konsultasi

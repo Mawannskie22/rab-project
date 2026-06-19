@@ -3,7 +3,7 @@ import "./globals.css";
 import ClientFloatingWhatsapp from "@/components/ClientFloatingWhatsapp";
 
 export const metadata: Metadata = {
-  title: "RAB Project Control",
+  title: "Cost Guard",
   description: "Hitung RAB, Audit BQ, dan Kontrol Biaya Proyek",
 };
 

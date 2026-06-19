@@ -13,7 +13,7 @@ export default function Hero() {
 
             <Image
               src="/images/project-control.png"
-              alt="RAB Project Control"
+              alt="Cost Guard"
               width={800}
               height={600}
               priority
@@ -44,7 +44,7 @@ export default function Hero() {
 
           <div className="mt-10 flex flex-wrap gap-4">
             <a
-              href="https://wa.me/6287882828329"
+              href="https://wa.me/6281999476069"
               className="rounded-xl bg-[#00F5D4] px-8 py-4 font-semibold text-black transition hover:scale-105"
             >
               Konsultasi Gratis
