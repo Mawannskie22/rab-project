@@ -8,21 +8,28 @@ export default function CTA() {
           <div className="rounded-3xl border border-[#00F5D4]/20 bg-[#1E293B] p-12 text-center">
 
             <h2 className="text-4xl font-bold text-white">
-              Jangan Tunggu Proyek Rugi Karena Salah Hitung
+              Siap Mengontrol Biaya Proyek Lebih Aman?
             </h2>
 
             <p className="mx-auto mt-4 max-w-2xl text-slate-400">
-              Konsultasikan kebutuhan proyek Anda sekarang dan dapatkan
-              solusi estimasi biaya, audit BQ, cashflow, serta kontrol proyek
-              yang lebih terukur.
+              Tim kami membantu Anda menghitung RAB, memeriksa BQ, mengatur cashflow,
+              dan menjaga proyek tetap terkendali dari awal sampai selesai.
             </p>
 
-            <a
-              href="https://wa.me/628123456789"
-              className="mt-8 inline-block rounded-xl bg-[#00F5D4] px-8 py-4 font-semibold text-black transition hover:scale-105"
-            >
-              Konsultasi via WhatsApp
-            </a>
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <a
+                href="https://wa.me/6281999476069"
+                className="inline-block rounded-xl bg-[#00F5D4] px-8 py-4 font-semibold text-black transition hover:scale-105"
+              >
+                Konsultasi Gratis
+              </a>
+              <a
+                href="/#portfolio"
+                className="inline-block rounded-xl border border-[#00F5D4]/20 px-8 py-4 font-semibold text-white transition hover:border-[#00F5D4]"
+              >
+                Lihat Portofolio
+              </a>
+            </div>
 
           </div>
         </Reveal>
