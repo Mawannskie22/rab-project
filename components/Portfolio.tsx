@@ -29,7 +29,7 @@ const projects = [
 
 export default function Portfolio() {
   return (
-    <section className="bg-[#090D16] py-24">
+    <section id="portfolio" className="scroll-mt-24 bg-[#090D16] py-24">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
           <div className="text-center">
@@ -51,7 +51,7 @@ export default function Portfolio() {
           {projects.map((project) => (
             <StaggerItem key={project.title}>
               <div className="rounded-2xl border border-white/10 bg-[#1E293B]/50 p-6 transition-all duration-300 hover:-translate-y-2 hover:border-[#00F5D4] flex flex-col h-full">
-                <div className="mb-6 h-40 rounded-xl bg-gradient-to-br from-[#00F5D4]/20 to-transparent" />
+                <div className="mb-6 h-40 rounded-xl bg-linear-to-br from-[#00F5D4]/20 to-transparent" />
 
                 <p className="text-sm text-[#00F5D4]">
                   {project.category}

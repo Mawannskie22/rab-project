@@ -19,7 +19,7 @@ export default function Navbar() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/logo/logoRAB.jpeg"
+            src="/logo/logoRAB.jpg"
             alt="Cost Guard"
             width={60}
             height={60}
@@ -33,16 +33,16 @@ export default function Navbar() {
         </Link>
 
         <nav className="hidden gap-8 md:flex">
-          <a href="#layanan" className="text-slate-300 hover:text-[#00F5D4]">
+          <Link href="/#layanan" className="text-slate-300 hover:text-[#00F5D4]">
             Layanan
-          </a>
-          <a href="#harga" className="text-slate-300 hover:text-[#00F5D4]">
+          </Link>
+          <Link href="/#harga" className="text-slate-300 hover:text-[#00F5D4]">
             Harga
-          </a>
-          <a href="#faq" className="text-slate-300 hover:text-[#00F5D4]">
+          </Link>
+          <Link href="/#faq" className="text-slate-300 hover:text-[#00F5D4]">
             FAQ
-          </a>
-          <Link href="/portfolio" className="text-slate-300 hover:text-[#00F5D4]">
+          </Link>
+          <Link href="/#portfolio" className="text-slate-300 hover:text-[#00F5D4]">
             Portfolio
           </Link>
           <Link href="/kontak" className="text-slate-300 hover:text-[#00F5D4]">
@@ -68,16 +68,16 @@ export default function Navbar() {
       {isOpen && (
         <div className="border-t border-white/10 bg-[#090D16] md:hidden">
           <nav className="flex flex-col p-6">
-            <a href="#layanan" className="py-3 text-slate-300">
+            <Link href="/#layanan" className="py-3 text-slate-300">
               Layanan
-            </a>
-            <a href="#harga" className="py-3 text-slate-300">
+            </Link>
+            <Link href="/#harga" className="py-3 text-slate-300">
               Harga
-            </a>
-            <a href="#faq" className="py-3 text-slate-300">
+            </Link>
+            <Link href="/#faq" className="py-3 text-slate-300">
               FAQ
-            </a>
-            <Link href="/portfolio" className="py-3 text-slate-300">
+            </Link>
+            <Link href="/#portfolio" className="py-3 text-slate-300">
               Portfolio
             </Link>
             <Link href="/kontak" className="py-3 text-slate-300">

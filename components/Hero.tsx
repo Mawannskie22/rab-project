@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Reveal } from "./anim-wrapper";
 
 export default function Hero() {
@@ -50,12 +51,12 @@ export default function Hero() {
               Konsultasi Gratis
             </a>
 
-            <a
-              href="#layanan"
+            <Link
+              href="/#layanan"
               className="rounded-xl border border-[#00F5D4]/20 px-8 py-4 font-semibold text-white transition hover:border-[#00F5D4]"
             >
               Lihat Layanan
-            </a>
+            </Link>
           </div>
         </Reveal>
       </div>

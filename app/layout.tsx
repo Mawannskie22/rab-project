@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ClientFloatingWhatsapp from "@/components/ClientFloatingWhatsapp";
+import PageTransition from "@/components/PageTransition";
 
 export const metadata: Metadata = {
   title: "Cost Guard",
@@ -15,7 +16,8 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body>
-        {children}<ClientFloatingWhatsapp />
+        <PageTransition>{children}</PageTransition>
+        <ClientFloatingWhatsapp />
       </body>
     </html>
   );
