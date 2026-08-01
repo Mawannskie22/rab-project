@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Services from "@/components/Services";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Layanan Jasa Hitung RAB, Audit BQ & Cost Control",
@@ -10,6 +11,13 @@ export const metadata: Metadata = {
     "Daftar layanan Cost Guard: hitung RAB, audit BQ, review RAB, back up volume, cost control, cashflow proyek, schedule pekerjaan, dan schedule material.",
   alternates: {
     canonical: "/layanan",
+  },
+  openGraph: {
+    type: "website",
+    title: "Layanan Jasa Hitung RAB, Audit BQ & Cost Control",
+    description:
+      "Daftar layanan Cost Guard: hitung RAB, audit BQ, review RAB, back up volume, cost control, cashflow proyek, schedule pekerjaan, dan schedule material.",
+    url: `${siteConfig.url}/layanan`,
   },
 };
 

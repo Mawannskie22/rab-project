@@ -73,8 +73,11 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Service",
     serviceType: "Jasa Hitung RAB, Audit BQ, dan Cost Control Proyek",
+    url: siteConfig.url,
+    image: `${siteConfig.url}/opengraph-image`,
     provider: {
       "@type": "ProfessionalService",
+      "@id": siteConfig.url,
       name: siteConfig.name,
       url: siteConfig.url,
       telephone: `+${siteConfig.whatsapp}`,

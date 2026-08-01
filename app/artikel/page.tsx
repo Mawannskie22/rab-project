@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { Reveal, Stagger, StaggerItem } from "@/components/anim-wrapper";
 import JsonLd from "@/components/JsonLd";
 import { articles } from "@/data/artikel";
-import { waLink } from "@/data/site";
+import { siteConfig, waLink } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Artikel & Panduan Biaya Bangunan, RAB & Audit BQ",
@@ -13,6 +13,13 @@ export const metadata: Metadata = {
     "Kumpulan artikel dan panduan tentang cara menghitung biaya bangunan, menyusun RAB, audit BQ, dan kontrol biaya proyek untuk kontraktor, owner, dan developer.",
   alternates: {
     canonical: "/artikel",
+  },
+  openGraph: {
+    type: "website",
+    title: "Artikel & Panduan Biaya Bangunan, RAB & Audit BQ",
+    description:
+      "Kumpulan artikel dan panduan tentang cara menghitung biaya bangunan, menyusun RAB, audit BQ, dan kontrol biaya proyek untuk kontraktor, owner, dan developer.",
+    url: `${siteConfig.url}/artikel`,
   },
 };
 

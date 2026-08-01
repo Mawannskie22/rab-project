@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     images: [
       {
-        url: "/opengraph-image",
+        url: `${siteConfig.url}/opengraph-image`,
         width: 1200,
         height: 630,
         alt: siteName,
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteName,
     description: siteConfig.description,
-    images: ["/opengraph-image"],
+    images: [`${siteConfig.url}/opengraph-image`],
   },
 };
 
@@ -64,9 +64,12 @@ export default function RootLayout({
   const organizationJsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
+    "@id": siteConfig.url,
     name: siteConfig.name,
     description: siteConfig.description,
     url: siteConfig.url,
+    image: `${siteConfig.url}/opengraph-image`,
+    logo: `${siteConfig.url}/opengraph-image`,
     telephone: `+${siteConfig.whatsapp}`,
     email: siteConfig.email,
     priceRange: siteConfig.priceRange,
@@ -93,11 +96,27 @@ export default function RootLayout({
     ],
   };
 
+  const webSiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    description: siteConfig.description,
+    inLanguage: "id-ID",
+    publisher: {
+      "@type": "ProfessionalService",
+      "@id": siteConfig.url,
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  };
+
   return (
     <html lang="id">
       <head>
         <JsonLd data={organizationJsonLd} />
-        <meta name="theme-color" content="#ffffff" />
+        <JsonLd data={webSiteJsonLd} />
+        <meta name="theme-color" content="#2563eb" />
       </head>
       <body>
         <PageTransition>{children}</PageTransition>

@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Cost Guard",
   legalName: "PT Cost Guard Indonesia",
   tagline: "Cost Control Partner",
-  url: "https://costguard.id",
+  url: "https://costguard.site",
   description:
     "Jasa hitung RAB, audit BQ, review RAB, cost control, cashflow dan schedule proyek untuk kontraktor, owner, developer, dan konsultan di Indonesia.",
   keywords: [
@@ -24,7 +24,7 @@ export const siteConfig = {
   ],
   whatsapp: "6281999476069",
   whatsappDisplay: "+62 819-9947-6069",
-  email: "info@costguard.id",
+  email: "info@costguard.site",
   phone: "+6281999476069",
   address: "Jakarta, Indonesia",
   city: "Jakarta",

@@ -4,6 +4,7 @@ import Portfolio from "@/components/Portfolio";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import { Reveal } from "@/components/anim-wrapper";
+import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Portfolio Proyek RAB, Audit BQ & Cost Control",
@@ -11,6 +12,13 @@ export const metadata: Metadata = {
     "Contoh proyek yang pernah ditangani Cost Guard: RAB rumah tinggal, audit BQ renovasi kantor, schedule pekerjaan interior, dan cashflow project control.",
   alternates: {
     canonical: "/portfolio",
+  },
+  openGraph: {
+    type: "website",
+    title: "Portfolio Proyek RAB, Audit BQ & Cost Control",
+    description:
+      "Contoh proyek yang pernah ditangani Cost Guard: RAB rumah tinggal, audit BQ renovasi kantor, schedule pekerjaan interior, dan cashflow project control.",
+    url: `${siteConfig.url}/portfolio`,
   },
 };
 

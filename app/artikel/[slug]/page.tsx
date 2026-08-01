@@ -36,11 +36,20 @@ export async function generateMetadata({
       publishedTime: article.date,
       authors: [siteConfig.name],
       url: `${siteConfig.url}/artikel/${article.slug}`,
+      images: [
+        {
+          url: `${siteConfig.url}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: article.title,
       description: article.description,
+      images: [`${siteConfig.url}/opengraph-image`],
     },
   };
 }
@@ -112,6 +121,9 @@ export default async function ArtikelDetailPage({ params }: PageProps) {
     headline: article.title,
     description: article.description,
     datePublished: article.date,
+    image: `${siteConfig.url}/opengraph-image`,
+    keywords: article.keywords.join(", "),
+    inLanguage: "id-ID",
     author: {
       "@type": "Organization",
       name: siteConfig.name,

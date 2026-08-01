@@ -4,6 +4,7 @@ import Stats from "@/components/Stats";
 import Advantages from "@/components/Advantages";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Tentang Kami — Partner Kontrol Biaya Proyek",
@@ -11,6 +12,13 @@ export const metadata: Metadata = {
     "Cost Guard membantu kontraktor, owner, developer, dan konsultan mengendalikan biaya, cashflow, dan schedule proyek agar lebih terukur, efisien, dan minim risiko kerugian.",
   alternates: {
     canonical: "/tentang",
+  },
+  openGraph: {
+    type: "website",
+    title: "Tentang Kami — Partner Kontrol Biaya Proyek",
+    description:
+      "Cost Guard membantu kontraktor, owner, developer, dan konsultan mengendalikan biaya, cashflow, dan schedule proyek agar lebih terukur, efisien, dan minim risiko kerugian.",
+    url: `${siteConfig.url}/tentang`,
   },
 };
 

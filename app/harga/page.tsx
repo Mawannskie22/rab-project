@@ -5,6 +5,7 @@ import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
+import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Harga Paket Jasa Hitung RAB & Audit BQ",
@@ -12,6 +13,13 @@ export const metadata: Metadata = {
     "Harga paket jasa hitung RAB mulai Rp500.000, audit BQ/review RAB mulai Rp1.000.000, dan paket Full Project Control custom sesuai kebutuhan proyek Anda.",
   alternates: {
     canonical: "/harga",
+  },
+  openGraph: {
+    type: "website",
+    title: "Harga Paket Jasa Hitung RAB & Audit BQ",
+    description:
+      "Harga paket jasa hitung RAB mulai Rp500.000, audit BQ/review RAB mulai Rp1.000.000, dan paket Full Project Control custom sesuai kebutuhan proyek Anda.",
+    url: `${siteConfig.url}/harga`,
   },
 };
 
