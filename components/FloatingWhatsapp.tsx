@@ -2,11 +2,12 @@
 
 import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { waLink } from "@/data/site";
 
 export default function FloatingWhatsapp() {
   return (
     <motion.a
-      href="https://wa.me/628123456789"
+      href={waLink("Halo Cost Guard, saya ingin konsultasi biaya proyek.")}
       target="_blank"
       rel="noopener noreferrer"
       initial={{ scale: 0, opacity: 0 }}

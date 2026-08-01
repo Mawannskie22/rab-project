@@ -1,46 +1,38 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  /* ===== TEMA WARNA WEBSITE =====
+     Ganti nilai di bawah ini untuk mengubah seluruh tema website.
+     Utilitas yang dipakai: bg-base, bg-surface, bg-surface-2,
+     bg-accent, text-accent-strong, border-accent-strong, dll. */
+  --color-base: #ffffff;          /* background utama (putih) */
+  --color-surface: #ffffff;       /* background kartu/panel (putih) */
+  --color-surface-2: #ffffff;     /* background section kontras (putih) */
+  --color-accent: #2563eb;        /* warna utama: tombol & link (biru) */
+  --color-accent-strong: #1d4ed8; /* aksen teks/border (biru gelap) */
+  --color-highlight: #f59e0b;     /* warna penyorot: statistik/badge (emas) */
+  --color-highlight-strong: #d97706; /* penyorot teks kontras tinggi */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-base);
+  color: #0f172a;
   font-family: Arial, Helvetica, sans-serif;
 }
+
 html {
   scroll-behavior: smooth;
 }
 
-body {
-  background: #090d16;
-}
 .bg-grid {
   background-image:
-    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
 
-  background-size: 40px 40px;
-}
-.bg-grid {
-  background-image:
-    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
   background-size: 40px 40px;
 }

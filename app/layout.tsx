@@ -3,34 +3,56 @@ import "./globals.css";
 import ClientFloatingWhatsapp from "@/components/ClientFloatingWhatsapp";
 import PageTransition from "@/components/PageTransition";
 import Analytics from "@/components/Analytics";
+import JsonLd from "@/components/JsonLd";
+import { siteConfig } from "@/data/site";
+
+const siteName = `${siteConfig.name} | ${siteConfig.tagline}`;
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Cost Guard | Cost Control Partner",
-    template: "%s | Cost Guard",
+    default: siteName,
+    template: `%s | ${siteConfig.name}`,
   },
-  description:
-    "Cost Guard membantu kontraktor, owner, dan developer mengendalikan biaya proyek melalui RAB, audit BQ, schedule, dan cost control.",
-  keywords: [
-    "RAB",
-    "audit BQ",
-    "cost control",
-    "schedule proyek",
-    "kontrol biaya proyek",
-  ],
-  metadataBase: new URL("https://costguard.id"),
+  description: siteConfig.description,
+  keywords: [...siteConfig.keywords],
+  applicationName: siteConfig.name,
+  category: "construction",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
-    title: "Cost Guard | Cost Control Partner",
-    description:
-      "Solusi praktis untuk menghitung RAB, audit BQ, dan mengendalikan biaya proyek secara terukur.",
     type: "website",
     locale: "id_ID",
+    siteName,
+    title: siteName,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: siteName,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cost Guard | Cost Control Partner",
-    description:
-      "Bantu kontraktor dan developer mengontrol biaya proyek dengan sistem yang lebih akurat.",
+    title: siteName,
+    description: siteConfig.description,
+    images: ["/opengraph-image"],
   },
 };
 
@@ -39,8 +61,44 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: siteConfig.name,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    telephone: `+${siteConfig.whatsapp}`,
+    email: siteConfig.email,
+    priceRange: siteConfig.priceRange,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: siteConfig.city,
+      addressRegion: siteConfig.region,
+      addressCountry: siteConfig.country,
+      postalCode: siteConfig.postcode,
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: -6.2088,
+      longitude: 106.8456,
+    },
+    openingHours: siteConfig.openingHours,
+    areaServed: "ID",
+    founder: {
+      "@type": "Person",
+      name: "Cost Guard Team",
+    },
+    sameAs: [
+      `https://wa.me/${siteConfig.whatsapp}`,
+    ],
+  };
+
   return (
     <html lang="id">
+      <head>
+        <JsonLd data={organizationJsonLd} />
+        <meta name="theme-color" content="#ffffff" />
+      </head>
       <body>
         <PageTransition>{children}</PageTransition>
         <ClientFloatingWhatsapp />

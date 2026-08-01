@@ -1,4 +1,5 @@
 import { Reveal, Stagger, StaggerItem } from "./anim-wrapper";
+import { waLink } from "@/data/site";
 
 const packages = [
   {
@@ -40,20 +41,20 @@ const packages = [
 
 export default function Pricing() {
   return (
-    <section id="harga" className="bg-[#090D16] py-24">
+    <section id="harga" className="scroll-mt-24 bg-base py-24">
       <div className="mx-auto max-w-7xl px-6">
 
         <Reveal>
           <div className="text-center">
-            <span className="rounded-full border border-[#00F5D4]/20 px-4 py-2 text-sm text-[#00F5D4]">
+            <span className="rounded-full border border-accent-strong/40 px-4 py-2 text-sm text-accent-strong">
               Paket Layanan
             </span>
 
-            <h2 className="mt-6 text-4xl font-bold text-white">
+            <h2 className="mt-6 text-4xl font-bold text-slate-900">
               Pilih Paket Sesuai Kebutuhan Proyek
             </h2>
 
-            <p className="mx-auto mt-4 max-w-2xl text-slate-400">
+            <p className="mx-auto mt-4 max-w-2xl text-slate-600">
               Mulai dari estimasi RAB hingga kontrol proyek secara menyeluruh.
             </p>
           </div>
@@ -65,15 +66,15 @@ export default function Pricing() {
               <div
                 className={`rounded-3xl border p-8 flex flex-col h-full ${
                   pkg.featured
-                    ? "border-[#00F5D4] bg-[#1E293B]"
-                    : "border-white/10 bg-[#1E293B]/50"
+                    ? "border-accent-strong bg-surface"
+                    : "border-slate-300 bg-surface/50"
                 }`}
               >
-                <h3 className="text-2xl font-bold text-white">
+                <h3 className="text-2xl font-bold text-slate-900">
                   {pkg.name}
                 </h3>
 
-                <p className="mt-4 text-3xl font-bold text-[#00F5D4]">
+                <p className="mt-4 text-3xl font-bold text-accent-strong">
                   {pkg.price}
                 </p>
 
@@ -81,7 +82,7 @@ export default function Pricing() {
                   {pkg.features.map((feature) => (
                     <li
                       key={feature}
-                      className="text-slate-300"
+                      className="text-slate-600"
                     >
                       ✓ {feature}
                     </li>
@@ -89,8 +90,8 @@ export default function Pricing() {
                 </ul>
 
                 <a
-                  href="https://wa.me/628123456789"
-                  className="mt-8 block rounded-xl bg-[#00F5D4] px-5 py-3 text-center font-semibold text-black"
+                  href={waLink(`Halo Cost Guard, saya tertarik paket ${pkg.name} (${pkg.price}). Mohon info detail.`)}
+                  className="mt-8 block rounded-xl bg-accent px-5 py-3 text-center font-semibold text-black"
                 >
                   Konsultasi
                 </a>

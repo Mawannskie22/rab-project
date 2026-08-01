@@ -1,102 +1,129 @@
 "use client";
 
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import { Reveal } from "./anim-wrapper";
+import { waLink } from "@/data/site";
+
+const schema = z.object({
+  nama: z.string().min(2, "Nama minimal 2 karakter"),
+  whatsapp: z
+    .string()
+    .min(8, "Nomor WhatsApp minimal 8 digit")
+    .regex(/^[0-9+\-()\s]+$/, "Format nomor tidak valid"),
+  jenisProyek: z.string().optional(),
+  pesan: z.string().min(10, "Jelaskan kebutuhan minimal 10 karakter"),
+});
+
+type FormValues = z.infer<typeof schema>;
+
+const inputClass =
+  "w-full rounded-xl border border-slate-300 bg-base p-4 text-slate-900 outline-none transition focus:border-accent-strong";
 
 export default function ContactForm() {
-  const [nama, setNama] = useState("");
-  const [whatsapp, setWhatsapp] = useState("");
-  const [jenisProyek, setJenisProyek] = useState("");
-  const [pesan, setPesan] = useState("");
   const [status, setStatus] = useState<"idle" | "success">("idle");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<FormValues>({
+    resolver: zodResolver(schema),
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!nama.trim() || !whatsapp.trim() || !pesan.trim()) {
-      setStatus("idle");
-      return;
-    }
-
+  const onSubmit = (data: FormValues) => {
     const text = `Halo Cost Guard,
 
-Nama: ${nama}
-WhatsApp: ${whatsapp}
-Jenis Proyek: ${jenisProyek || "-"}
+Nama: ${data.nama}
+WhatsApp: ${data.whatsapp}
+Jenis Proyek: ${data.jenisProyek || "-"}
 
 Kebutuhan:
-${pesan}`;
+${data.pesan}`;
 
-    const url = `https://wa.me/6281999476069?text=${encodeURIComponent(text)}`;
-
-    window.open(url, "_blank");
+    window.open(waLink(text), "_blank");
     setStatus("success");
+    reset();
   };
 
   return (
-    <section className="bg-[#090D16] py-24">
+    <section className="bg-base py-24">
       <div className="mx-auto max-w-4xl px-6">
         <div className="text-center">
-          <h2 className="text-4xl font-bold text-white">
+          <h2 className="text-4xl font-bold text-slate-900">
             Konsultasikan Proyek Anda
           </h2>
 
-          <p className="mt-4 text-slate-400">
+          <p className="mt-4 text-slate-600">
             Kirim detail proyek dan kami akan membantu menentukan layanan yang sesuai.
           </p>
         </div>
 
         <Reveal>
           <form
-            onSubmit={handleSubmit}
-            className="mt-12 space-y-6 rounded-3xl border border-white/10 bg-[#1E293B]/50 p-8"
+            onSubmit={handleSubmit(onSubmit)}
+            noValidate
+            className="mt-12 space-y-6 rounded-3xl border border-slate-300 bg-surface/50 p-8"
           >
             <div className="grid gap-6 md:grid-cols-2">
-              <input
-                type="text"
-                placeholder="Nama"
-                value={nama}
-                onChange={(e) => setNama(e.target.value)}
-                className="rounded-xl border border-white/10 bg-[#090D16] p-4 text-white outline-none"
-                required
-              />
+              <div>
+                <input
+                  type="text"
+                  placeholder="Nama"
+                  aria-invalid={!!errors.nama}
+                  {...register("nama")}
+                  className={inputClass}
+                />
+                {errors.nama && (
+                  <p className="mt-2 text-sm text-red-600">{errors.nama.message}</p>
+                )}
+              </div>
 
-              <input
-                type="text"
-                placeholder="Nomor WhatsApp"
-                value={whatsapp}
-                onChange={(e) => setWhatsapp(e.target.value)}
-                className="rounded-xl border border-white/10 bg-[#090D16] p-4 text-white outline-none"
-                required
-              />
+              <div>
+                <input
+                  type="text"
+                  placeholder="Nomor WhatsApp"
+                  aria-invalid={!!errors.whatsapp}
+                  {...register("whatsapp")}
+                  className={inputClass}
+                />
+                {errors.whatsapp && (
+                  <p className="mt-2 text-sm text-red-600">{errors.whatsapp.message}</p>
+                )}
+              </div>
             </div>
 
             <input
               type="text"
               placeholder="Jenis Proyek"
-              value={jenisProyek}
-              onChange={(e) => setJenisProyek(e.target.value)}
-              className="w-full rounded-xl border border-white/10 bg-[#090D16] p-4 text-white outline-none"
+              {...register("jenisProyek")}
+              className={inputClass}
             />
 
-            <textarea
-              rows={5}
-              placeholder="Jelaskan kebutuhan proyek Anda..."
-              value={pesan}
-              onChange={(e) => setPesan(e.target.value)}
-              className="w-full rounded-xl border border-white/10 bg-[#090D16] p-4 text-white outline-none"
-              required
-            />
+            <div>
+              <textarea
+                rows={5}
+                placeholder="Jelaskan kebutuhan proyek Anda..."
+                aria-invalid={!!errors.pesan}
+                {...register("pesan")}
+                className={inputClass}
+              />
+              {errors.pesan && (
+                <p className="mt-2 text-sm text-red-600">{errors.pesan.message}</p>
+              )}
+            </div>
 
             {status === "success" && (
-              <p className="rounded-xl border border-[#00F5D4]/30 bg-[#00F5D4]/10 p-3 text-sm text-[#00F5D4]">
+              <p className="rounded-xl border border-accent-strong/30 bg-accent/10 p-3 text-sm text-accent-strong">
                 Terima kasih, Anda akan diarahkan ke WhatsApp kami.
               </p>
             )}
 
             <button
               type="submit"
-              className="rounded-xl bg-[#00F5D4] px-8 py-4 font-semibold text-black transition hover:scale-105"
+              className="rounded-xl bg-accent px-8 py-4 font-semibold text-black transition hover:scale-105"
             >
               Kirim Konsultasi
             </button>

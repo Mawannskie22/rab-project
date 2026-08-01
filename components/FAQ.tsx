@@ -35,19 +35,19 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section id="faq" className="bg-[#090D16] py-24">
+    <section id="faq" className="scroll-mt-24 bg-base py-24">
       <div className="mx-auto max-w-4xl px-6">
         <Reveal>
           <div className="text-center">
-            <span className="rounded-full border border-[#00F5D4]/20 px-4 py-2 text-sm text-[#00F5D4]">
+            <span className="rounded-full border border-accent-strong/40 px-4 py-2 text-sm text-accent-strong">
               FAQ
             </span>
 
-            <h2 className="mt-6 text-4xl font-bold text-white">
+            <h2 className="mt-6 text-4xl font-bold text-slate-900">
               Pertanyaan yang Sering Diajukan
             </h2>
 
-            <p className="mt-4 text-slate-400">
+            <p className="mt-4 text-slate-600">
               Temukan jawaban untuk pertanyaan yang paling sering ditanyakan klien.
             </p>
           </div>
@@ -56,12 +56,12 @@ export default function FAQ() {
         <Stagger className="mt-12 space-y-6">
           {faqs.map((faq) => (
             <StaggerItem key={faq.question}>
-              <div className="rounded-2xl border border-white/10 bg-[#1E293B]/50 p-6">
-                <h3 className="text-lg font-semibold text-white">
+              <div className="rounded-2xl border border-slate-300 bg-surface/50 p-6">
+                <h3 className="text-lg font-semibold text-slate-900">
                   {faq.question}
                 </h3>
 
-                <p className="mt-3 text-slate-400">
+                <p className="mt-3 text-slate-600">
                   {faq.answer}
                 </p>
               </div>
